@@ -641,7 +641,7 @@ Model dengan performa terbaik adalah:
 
 - Model Logistic Regression menunjukkan performa yang paling rendah di semua metrik, dengan akurasi hanya 0.7432, menunjukkan model ini tidak mampu menangani kompleksitas data multiklas dengan baik meskipun sudah menerapkan hyperparameter turning pada model ini.
 
-### Hasil Proyek Berdasarkan Evaluasi (TP, FP, FN, TN)
+#### **Hasil Proyek Berdasarkan Evaluasi (TP, FP, FN, TN)**
 Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), False Positive (FP), False Negative (FN), dan True Negative (TN) untuk masing-masing model berdasarkan pendekatan one-vs-rest per kelas GradeClass (0–4):
 
 1. Random Forest

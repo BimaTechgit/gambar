@@ -516,6 +516,24 @@ Artificial Neural Network (ANN) adalah model deep learning yang terinspirasi dar
 
 - Overfitting jika tidak diberi regularisasi.
 
+| **Model**             | **Akurasi** | **Precision**  | **Recall**  | **F1 Score**  |
+|------------------------|-------------|---------------|-------------|---------------|
+| Logistic Regression    | 0.9206      | 0.9199        | 0.9206      | 0.9189        |
+| Random Forest          | 0.9206      | 0.9225        | 0.9206      | 0.9190        |
+| Support Vector Machine | 0.7432      | 0.7332        | 0.7432      | 0.7353        |
+| Deep Learning          | 0.8162      | 0.8206        | 0.8162      | 0.8137        |
+
+
+berdasarkan hasil membangun model dan juga hasil akurasi dari 4 algoritma yang ada, Model Terbaik adalah XGBoost Classifier
+
+model ini menghasilkan akurasi tertinggi dan identik (92.07%). walaupun random forest juga menghasilkan akurasi yang sama yaitu (92.07%) namun berbedaan skor yang unggul ada para presicion dan F1-Score XGboost yang sedikit lebih unggul walaupun berbedaan ini sangat tipis. Maka dari itu, Dipilih: XGBoost sebagai solusi terbaik, dengan alasan:
+
+Akurasi sama dengan Random Forest, tapi lebih cepat dalam training dan menangani data yang besar.
+
+XGboost lebih interpretatif dan diunggulkan terhadap data numerik pada dataset yang ada, cocok untuk deployment awal atau produksi.
+
+XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sangat besar.
+
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 

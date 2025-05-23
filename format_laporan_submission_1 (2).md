@@ -630,7 +630,7 @@ XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sang
 ---
 
 
-#### **Hasil Proyek Berdasarkan Metrik Evaluasi**
+#### **Hasil Proyek Berdasarkan Metrik Akurasi**
 Model dengan performa terbaik adalah:
 
 - Random Forest dan XGBoost, keduanya meraih akurasi 0.9207, precision dan recall yang tinggi (>0.91).
@@ -641,40 +641,44 @@ Model dengan performa terbaik adalah:
 
 - Model Logistic Regression menunjukkan performa yang paling rendah di semua metrik, dengan akurasi hanya 0.7432, menunjukkan model ini tidak mampu menangani kompleksitas data multiklas dengan baik meskipun sudah menerapkan hyperparameter turning pada model ini.
 
-### Komponen Konkrit dari Evaluasi (TP, FP, FN, TN)
+### Hasil Proyek Berdasarkan Evaluasi (TP, FP, FN, TN)
 Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), False Positive (FP), False Negative (FN), dan True Negative (TN) untuk masing-masing model berdasarkan pendekatan one-vs-rest per kelas GradeClass (0–4):
 
 1. Random Forest
-TP tertinggi ada pada kelas 4 (233) dan kelas 2–3 (74).
 
-Kelas 0 memiliki FN = 9 dan FP = 2 → menandakan masih ada prediksi salah pada siswa berkinerja sangat baik.
+- TP tertinggi ada pada kelas 4 (233) dan kelas 2–3 (74).
 
-Total kesalahan minim: hanya beberapa kesalahan antar kelas tetangga (misal kelas 3 salah diprediksi sebagai kelas 4).
+- Kelas 0 memiliki FN = 9 dan FP = 2 → menandakan masih ada prediksi salah pada siswa berkinerja sangat baik.
 
-TN tertinggi menunjukkan model mampu mengenali siswa bukan dari kelas target dengan sangat baik.
+- Total kesalahan minim: hanya beberapa kesalahan antar kelas tetangga (misal kelas 3 salah diprediksi sebagai kelas 4).
+
+- TN tertinggi menunjukkan model mampu mengenali siswa bukan dari kelas target dengan sangat baik.
 
 2. XGBoost
-TP sangat merata: kelas 2 (75), kelas 3 (73), kelas 4 (232).
 
-FP lebih rendah dibanding Random Forest pada beberapa kelas, mendukung nilai Precision tertinggi (0.9225).
+- TP sangat merata: kelas 2 (75), kelas 3 (73), kelas 4 (232).
 
-FN juga rendah, khususnya di kelas 1–2 → recall kuat di area performa sedang.
+- FP lebih rendah dibanding Random Forest pada beberapa kelas, mendukung nilai Precision tertinggi (0.9225).
 
-Stabil secara prediksi per kelas, cocok untuk aplikasi di dunia nyata.
+- FN juga rendah, khususnya di kelas 1–2 → recall kuat di area performa sedang.
+
+- Stabil secara prediksi per kelas, cocok untuk aplikasi di dunia nyata.
 
 3. Logistic Regression
-TP relatif rendah (contoh kelas 1 hanya 21), FN dan FP cukup tinggi di semua kelas.
 
-TN cukup besar tapi tidak menutupi kelemahan model dalam membedakan antar kelas.
+- TP relatif rendah (contoh kelas 1 hanya 21), FN dan FP cukup tinggi di semua kelas.
 
-Ini mendukung akurasi rendah (0.7432) dan menunjukkan bahwa model ini kurang efektif dalam menangani kompleksitas interaksi antar fitur siswa.
+- TN cukup besar tapi tidak menutupi kelemahan model dalam membedakan antar kelas.
+
+- Ini mendukung akurasi rendah (0.7432) dan menunjukkan bahwa model ini kurang efektif dalam menangani kompleksitas interaksi antar fitur siswa.
 
 4. Artificial Neural Network (ANN)
-TP cukup tinggi di kelas tengah (2: 57, 3: 66), namun kelas 0–1 memiliki FN dan FP yang lumayan besar.
 
-FP dan FN lebih tinggi dari XGBoost dan RF, menunjukkan model masih bisa ditingkatkan melalui tuning atau arsitektur lebih kompleks.
+- TP cukup tinggi di kelas tengah (2: 57, 3: 66), namun kelas 0–1 memiliki FN dan FP yang lumayan besar.
 
-Cocok sebagai baseline untuk pendekatan deep learning, tetapi belum sebaik model tree-based untuk dataset ini.
+- FP dan FN lebih tinggi dari XGBoost dan RF, menunjukkan model masih bisa ditingkatkan melalui tuning atau arsitektur lebih kompleks.
+
+- Cocok sebagai baseline untuk pendekatan deep learning, tetapi belum sebaik model tree-based untuk dataset ini.
 
 ---
 

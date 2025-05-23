@@ -535,16 +535,114 @@ XGboost lebih interpretatif dan diunggulkan terhadap data numerik pada dataset y
 XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sangat besar.
 
 ## Evaluation
-Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.
 
-Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan
-- Menjelaskan hasil proyek berdasarkan metrik evaluasi
+### **Kesimpulan Evaluasi Model:**
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+ Berdasarkan hasil evaluasi model menggunakan metrik Akurasi, Precision, Recall, dan F1 Score, berikut adalah analisis dari masing-masing model:
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
+ ![confussion](https://github.com/BimaTechgit/gambar/blob/main/download%20(17).png?raw=true)
+
+1. Random Forest:
+
+  - Akurasi: 0.9206
+  - Precision: 0.9199
+  - Recall: 0.9206
+  - F1 Score: 0.9189
+
+2. XGBoost:
+
+  - Akurasi: 0.9206
+  - Precision: 0.9225
+  - Recall: 0.9206
+  - F1 Score: 0.9190
+
+3. Logistic Regression:
+
+  - Akurasi: 0.7432
+  - Precision: 0.7332
+  - Recall: 0.7432
+  - F1 Score: 0.7353
+
+4. Artificial Neural Network (ANN):
+
+  - Akurasi: 0.8162
+  - Precision: 0.8206
+  - Recall: 0.8162
+  - F1 Score: 0.8137
+
+---
+
+#### **Metrik Evaluasi yang Digunakan**
+- Accuracy: Persentase prediksi yang benar terhadap total prediksi.
+
+- Precision: Kemampuan model untuk menghindari false positive.
+
+- Recall: Kemampuan model untuk mendeteksi semua kasus positif.
+
+- F1 Score: Harmonik rata-rata Precision dan Recall (digunakan saat data tidak seimbang).
+
+---
+
+### **Penjelasan Metrik Evaluasi**
+
+| Metrik        | Formula                                         | Penjelasan                                                                                |
+| ------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Accuracy**  | (TP + TN) / (TP + TN + FP + FN)                 | Persentase total prediksi yang benar. Cocok saat kelas seimbang.                          |
+| **Precision** | TP / (TP + FP)                                  | Seberapa tepat model saat memprediksi suatu kelas positif. Menghindari False Positive.    |
+| **Recall**    | TP / (TP + FN)                                  | Seberapa baik model mendeteksi semua instance positif. Penting saat False Negative mahal. |
+| **F1 Score**  | 2 × (Precision × Recall) / (Precision + Recall) | Kombinasi dari precision dan recall. Cocok saat terjadi ketidakseimbangan antar kelas.    |
+
+---
+
+
+#### **Hasil Proyek Berdasarkan Metrik Evaluasi**
+Model dengan performa terbaik adalah:
+
+- Random Forest dan XGBoost, keduanya meraih akurasi 0.9207, precision dan recall yang tinggi (>0.91).
+
+- Tetapi yang paling diunggulkan yaitu XGBoost unggul sedikit di precision (0.9225) dan F1-Score (0.9190) sementara Random Forest presicion (0.9199) dan F1-Score(0.9189).
+
+- Model ANN menghasilkan akurasi 0.8162. Meskipun cukup baik, ia memiliki sedikit penurunan pada recall (sensitivitas) dibanding Random Forest/XGBoost.
+
+- Model Logistic Regression menunjukkan performa yang paling rendah di semua metrik, dengan akurasi hanya 0.7432, menunjukkan model ini tidak mampu menangani kompleksitas data multiklas dengan baik meskipun sudah menerapkan hyperparameter turning pada model ini.
+
+---
+
+#### **Justifikasi Pemilihan Model Berdasarkan Metrik**
+
+- XGBoost	Precision dan F1 tertinggi → tepat dan stabil dalam klasifikasi setiap GradeClass, minim false positive/negative.
+
+- Random Forest	Akurasi dan Recall sangat tinggi → cocok untuk deteksi siswa berisiko secara menyeluruh.
+
+- ANN	Performa baik, tapi belum setara dengan model tree-based. Cocok untuk pendekatan deep learning yang bisa ditingkatkan.
+
+- Logistic Regression	Performa rendah, kurang cocok untuk menangani kompleksitas dan interaksi antar faktor dalam data pendidikan.
+
+---
+
+#### **Kesesuaian Metrik Evaluasi dengan Konteks**
+
+Karena tujuan utama proyek adalah mendeteksi secara akurat siswa yang akan berada di level performa akademik tertentu, maka penggunaan metrik berikut sangat relevan dan tepat dengan beberapa alasan:
+
+- Accuracy: Memberikan gambaran umum seberapa sering prediksi model tepat. Cocok digunakan karena data relatif seimbang antar kelas.
+
+- Precision	Penting untuk mengetahui apakah prediksi kategori tertentu (misalnya: “siswa sangat berprestasi” atau “berisiko rendah”) benar-benar akurat. Bermanfaat agar tidak salah memetakan siswa ke level tinggi tanpa justifikasi yang benar.
+
+- Recall Penting untuk menangkap sebanyak mungkin siswa dalam kategori kritis (misal: siswa dengan potensi rendah). Recall tinggi berarti intervensi dini bisa dilakukan tanpa banyak siswa terlewat.
+
+- F1-Score	Berguna untuk menyeimbangkan Precision dan Recall, terutama saat kita peduli pada kedua aspek, yaitu akurasi deteksi dan minim kesalahan dalam identifikasi.
+
+---
+
+#### **Kesimpulan Akhir**
+
+Berdasarkan evaluasi metrik dan confusion matrix:
+
+- XGBoost dipilih sebagai model terbaik karena memiliki kombinasi precision dan f1-score paling stabil dan sangat baik dalam mengklasifikasikan data multiklas tanpa overfitting.
+
+- Model ini sangat cocok untuk kasus fraud detection multiklas yang membutuhkan akurasi tinggi dan minim kesalahan klasifikasi.
+
+Dengan mempertimbangkan performa dan kebutuhan sumber daya, XGBoost dapat direkomendasikan sebagai model terbaik untuk mendukung strategi prediksi dan intervensi pendidikan yang akurat, stabil, dan bisa diandalkan.
 
 **---Ini adalah bagian akhir laporan---**
 

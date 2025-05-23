@@ -552,12 +552,28 @@ XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sang
   - Recall: 0.9206
   - F1 Score: 0.9189
 
+| Kelas | TP  | FN | FP | TN  |
+| ----- | --- | -- | -- | --- |
+| 0     | 12  | 9  | 2  | 458 |
+| 1     | 48  | 6  | 7  | 420 |
+| 2     | 74  | 4  | 5  | 398 |
+| 3     | 74  | 9  | 5  | 393 |
+| 4     | 233 | 11 | 12 | 328 |
+
 2. XGBoost:
 
   - Akurasi: 0.9206
   - Precision: 0.9225
   - Recall: 0.9206
   - F1 Score: 0.9190
+
+| Kelas | TP  | FN | FP | TN  |
+| ----- | --- | -- | -- | --- |
+| 0     | 11  | 10 | 5  | 455 |
+| 1     | 50  | 4  | 10 | 417 |
+| 2     | 75  | 2  | 5  | 399 |
+| 3     | 73  | 7  | 10 | 386 |
+| 4     | 232 | 10 | 6  | 328 |
 
 3. Logistic Regression:
 
@@ -566,12 +582,28 @@ XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sang
   - Recall: 0.7432
   - F1 Score: 0.7353
 
+| Kelas | TP  | FN | FP | TN  |
+| ----- | --- | -- | -- | --- |
+| 0     | 4   | 21 | 13 | 448 |
+| 1     | 21  | 34 | 32 | 399 |
+| 2     | 53  | 15 | 31 | 387 |
+| 3     | 49  | 33 | 24 | 380 |
+| 4     | 229 | 14 | 25 | 338 |
+
 4. Artificial Neural Network (ANN):
 
   - Akurasi: 0.8162
   - Precision: 0.8206
   - Recall: 0.8162
   - F1 Score: 0.8137
+
+| Kelas | TP  | FN | FP | TN  |
+| ----- | --- | -- | -- | --- |
+| 0     | 6   | 16 | 11 | 453 |
+| 1     | 39  | 15 | 18 | 414 |
+| 2     | 57  | 21 | 18 | 390 |
+| 3     | 66  | 20 | 26 | 375 |
+| 4     | 223 | 18 | 16 | 330 |
 
 ---
 

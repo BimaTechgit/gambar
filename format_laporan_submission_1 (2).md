@@ -305,12 +305,216 @@ Karena dataset sepenuhnya terdiri dari fitur numerik, maka tahap data preparatio
 - Alasan: Pembagian ini diperlukan untuk mengevaluasi performa model secara objektif pada data yang belum pernah dilihat model sebelumnya.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+### **Random Forest**
+
+Random Forest adalah algoritma ensemble learning berbasis decision tree yang menggabungkan banyak pohon keputusan (trees) untuk menghasilkan prediksi yang lebih kuat dan stabil. Ia bekerja dengan membuat banyak pohon (forest) pada data training dan menggabungkan hasil prediksi dari setiap pohon melalui vote mayoritas (klasifikasi) atau rata-rata (regresi).
+
+### **Parameter Penting Random Forest**
+
+| Parameter           | Fungsi                                                                                         |
+| ------------------- | ---------------------------------------------------------------------------------------------- |
+| `n_estimators`      | Jumlah pohon dalam hutan (semakin banyak, semakin stabil tapi lebih lambat)                    |
+| `max_depth`         | Kedalaman maksimal tiap pohon (menghindari overfitting jika terlalu dalam)                     |
+| `min_samples_split` | Jumlah minimal sampel untuk membagi node                                                       |
+| `min_samples_leaf`  | Jumlah minimal sampel di setiap daun pohon                                                     |
+| `max_features`      | Jumlah fitur yang dipertimbangkan untuk split terbaik (misalnya `'sqrt'`, `'log2'`, atau None) |
+| `class_weight`      | Menyeimbangkan bobot kelas jika target tidak seimbang (misalnya `'balanced'`)                  |
+| `random_state`      | Untuk memastikan hasil yang konsisten saat dijalankan berulang kali                            |
+
+### **Tahapan Pemodelan dengan Random Forest**
+**1. Data Preparation**
+- Dataset dipisahkan menjadi fitur (X) dan target (y).
+
+- Karena semua kolom bersifat numerik, dilakukan normalisasi dengan MinMaxScaler agar semua fitur berada pada skala yang seragam (0–1).
+
+- Data dibagi menjadi data latih dan data uji menggunakan train_test_split dengan rasio 80:20.
+
+**2. Inisialisasi Model Random Forest Menggunakan RandomForestClassifier dari sklearn.ensemble.**
+
+- Model dibuat dengan beberapa parameter penting untuk mengatur kompleksitas dan performa.
+
+**3. Pelatihan Model**
+- Model dilatih menggunakan X_train dan y_train.
+
+- Proses ini melibatkan pembentukan banyak pohon keputusan dan pembelajaran dari data latih.
+
+**4. Prediksi**
+- Model yang telah dilatih digunakan untuk memprediksi kelas target (GradeClass) pada data uji (X_test).
+
+**5. Evaluasi**
+
+- Accuracy: Persentase prediksi yang benar.
+
+- Classification report: Mencakup precision, recall, dan f1-score.
+
+- Confusion matrix: Untuk melihat detail prediksi benar vs salah per kelas
+
+### **Kelebihan Random Forest**
+
+- Akurat & powerful pada banyak jenis dataset.
+
+- Tidak mudah overfitting berkat averaging dari banyak pohon.
+
+- Dapat Menangani data numerik dan kategorikal.
+
+- Tahan terhadap noise & outlier.
+
+- Dapat menghitung feature importance untuk interpretasi model.
+
+### **Kekurangan Random Forest**
+
+- Kurang interpretatif dibanding model tunggal seperti Decision Tree.
+
+- Waktu training & prediksi bisa lambat jika jumlah pohon besar.
+
+- Model besar dan kompleks (tidak cocok untuk deployment ringan seperti di mobile).
+
+### **XGBoost Classifier**
+
+XGBoost (Extreme Gradient Boosting) adalah algoritma boosting yang sangat powerful untuk tugas klasifikasi dan regresi. Ia bekerja dengan cara membangun banyak model (pohon keputusan) secara berurutan. Setiap model baru mencoba memperbaiki kesalahan dari model sebelumnya.
+
+XGBoost dikenal karena efisiensi, fleksibilitas, dan performanya yang tinggi di kompetisi data science.
+
+| Parameter          | Fungsi                                                          |
+| ------------------ | --------------------------------------------------------------- |
+| `n_estimators`     | Jumlah pohon boosting                                           |
+| `learning_rate`    | Ukuran langkah tiap iterasi pembelajaran                        |
+| `max_depth`        | Kedalaman maksimum pohon                                        |
+| `subsample`        | Proporsi sampel pelatihan yang digunakan per pohon              |
+| `colsample_bytree` | Proporsi fitur yang digunakan saat membangun pohon              |
+| `objective`        | Fungsi tujuan; untuk klasifikasi multiclass → `'multi:softmax'` |
+| `num_class`        | Jumlah kelas target (wajib jika multiclass)                     |
+| `random_state`     | Untuk reproducibility hasil                                     |
+
+### **Tahapan Pemodelan XGBoost**
+1. Inisialisasi model dengan parameter:
+  - objective='multi:softmax'
+
+  - num_class=jumlah_kelas
+  
+  - n_estimators=100, learning_rate=0.1, max_depth=5
+
+2. Training model menggunakan X_train dan y_train
+
+3. Prediksi menggunakan X_test
+
+4. Evaluasi menggunakan accuracy, classification report, dan confusion matrix
+
+### **Kelebihan**
+- Akurasi tinggi, cocok untuk dataset kompleks
+
+- Mendukung regulasi (mengurangi overfitting)
+
+- Cepat dan efisien
+
+- Cocok untuk data numerik
+
+### **Kekurangan**
+- Tidak terlalu transparan/interpretatif
+
+- Butuh tuning parameter untuk performa optimal
+
+- Bisa overfitting jika data terlalu kecil atau noise tinggi
+
+### **Logistic Regression**
+
+Logistic Regression adalah algoritma linier untuk klasifikasi yang memperkirakan probabilitas kelas target menggunakan fungsi sigmoid. Meskipun namanya "regression", algoritma ini digunakan untuk klasifikasi biner atau multiklas. Cocok untuk baseline model dan dataset yang fitur-fiturnya berhubungan secara linier dengan target.
+
+### **Parameter Penting**
+| Parameter     | Fungsi                                                          |
+| ------------- | --------------------------------------------------------------- |
+| `penalty`     | Jenis regularisasi (`'l2'` umum digunakan)                      |
+| `solver`      | Algoritma optimisasi (`'lbfgs'` cocok untuk multiclass)         |
+| `multi_class` | `'multinomial'` untuk multi-kelas                               |
+| `max_iter`    | Iterasi maksimum untuk konvergensi                              |
+
+### **Tahapan Pemodelan Logistic Regression**
+
+1. Inisialisasi model dengan parameter:
+
+  - multi_class='multinomial'
+
+  - solver='lbfgs'
+
+  - max_iter=1000
+
+2. Training model menggunakan X_train dan y_train
+
+3. Prediksi menggunakan X_test
+
+4. Evaluasi menggunakan accuracy, classification report, dan confusion matrix
+
+### **Kelebihan**
+- Mudah diinterpretasikan
+
+- Cepat dan efisien
+
+- Cocok sebagai baseline
+
+- Tidak mudah overfitting pada data sederhana
+
+### **Kekurangan**
+- Kurang cocok untuk hubungan non-linear
+
+- Kurang powerful untuk data besar/kompleks
+
+- Kurang akurat dibanding model kompleks seperti XGBoost/Random Forest
+
+### **Artificial Neural Network (ANN)**
+
+Artificial Neural Network (ANN) adalah model deep learning yang terinspirasi dari jaringan saraf biologis. ANN terdiri dari lapisan-lapisan neuron (unit), yang dibagi menjadi Input Layer untuk menerima data masukan, Hidden Layer(s) untuk memproses input dengan bobot dan fungsi aktivasi, Output Layer untuk menghasilkan prediksi. ANN cocok digunakan untuk klasifikasi dan regresi, termasuk klasifikasi multikelas seperti dataset performa akademik yang sedang kamu kerjakan.
+
+### **Parameter Penting dalam ANN**
+
+| Parameter       | Keterangan                                                                      |
+| --------------- | ------------------------------------------------------------------------------- |
+| `input_dim`     | Jumlah fitur dari data masukan.                                                 |
+| `hidden_layers` | Jumlah lapisan tersembunyi.                                                     |
+| `units`         | Jumlah neuron dalam tiap layer.                                                 |
+| `activation`    | Fungsi aktivasi (ReLU, Sigmoid, Softmax, dsb).                                  |
+| `optimizer`     | Metode optimasi (Adam, SGD, RMSprop).                                           |
+| `loss`          | Fungsi loss (categorical\_crossentropy atau sparse\_categorical\_crossentropy). |
+| `epochs`        | Jumlah iterasi pelatihan model.                                                 |
+| `batch_size`    | Ukuran batch data pada setiap iterasi.                                          |
+| `metrics`       | Metode evaluasi seperti accuracy, precision, dll.                               |
+
+### **Tahapan & Parameter Pemodelan ANN**
+1. Normalisasi Data: Skala semua fitur ke rentang [0, 1] agar ANN cepat konvergen.
+
+2. Split Data: Membagi data ke train/test seperti sebelumnya (misalnya 80:20).
+
+3. Arsitektur Model
+
+  - Input layer: jumlah fitur numerik.
+
+  - Hidden layer 1–2 lapisan: misalnya 64–128 neuron.
+
+  - Output layer: jumlah kelas (GradeClass = 5 → 5 output neurons).
+
+4. Fungsi Aktivasi
+
+  - ReLU untuk hidden layers.
+
+  - Sigmoid untuk output layer prediksi probabilitas (klasifikasi biner)
+
+5. Optimizer: Adam umumnya terbaik untuk kecepatan dan akurasi.
+
+6. Loss Function: sparse_categorical_crossentropy jika target berupa label numerik, bukan one-hot.
+
+### **Kelebihan ANN**
+- Mampu menangani kompleksitas non-linear dengan baik.
+
+- Bisa belajar representasi fitur secara otomatis.
+
+- Sangat fleksibel dan scalable.
+
+### **Kekurangan ANN**
+- Membutuhkan banyak data agar efektif.
+
+- Interpretasi hasil sulit (black-box).
+
+- Overfitting jika tidak diberi regularisasi.
 
 ## Evaluation
 Pada bagian ini anda perlu menyebutkan metrik evaluasi yang digunakan. Lalu anda perlu menjelaskan hasil proyek berdasarkan metrik evaluasi yang digunakan.

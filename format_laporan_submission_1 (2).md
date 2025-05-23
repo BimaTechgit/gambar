@@ -220,7 +220,7 @@ Kolom ini merepresentasikan apakah siswa aktif dalam kegiatan sosial/relawan:
 
 Siswa yang aktif dalam kegiatan sukarela cenderung memiliki keterampilan sosial, empati, dan motivasi intrinsik yang tinggi.
 
-![Confusion Matrix](https://raw.githubusercontent.com/BimaTechgit/gambar/main/download%20(11).png)
+![Confusion Matrix](https://github.com/BimaTechgit/gambar/blob/main/download%20(11).png?raw=true)
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.

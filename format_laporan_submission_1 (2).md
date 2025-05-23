@@ -220,10 +220,32 @@ Kolom ini merepresentasikan apakah siswa aktif dalam kegiatan sosial/relawan:
 
 Siswa yang aktif dalam kegiatan sukarela cenderung memiliki keterampilan sosial, empati, dan motivasi intrinsik yang tinggi.
 
-![Confusion Matrix](https://github.com/BimaTechgit/gambar/blob/main/download%20(11).png?raw=true)
+### visualisasi data atau exploratory data analysis.
+![gradeclass](https://github.com/BimaTechgit/gambar/blob/main/download%20(11).png?raw=true)
+![GPA](https://github.com/BimaTechgit/gambar/blob/main/download%20(12).png?raw=true)
+![Absences](https://github.com/BimaTechgit/gambar/blob/main/download%20(13).png?raw=true)
+![StudyTimeWeekly](https://github.com/BimaTechgit/gambar/blob/main/download%20(14).png?raw=true)
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+### Analisis Data berdasarkan Grafik
+
+Distribusi GradeClass menunjukkan ketidakseimbangan kelas yang signifikan, di mana kelas nilai terendah (4.0) mendominasi dengan 1.211 siswa , sementara jumlah siswa pada kategori nilai lebih tinggi semakin menurun (3.0: 414 siswa, 2.0: 391 siswa, 1.0: 269 siswa, dan 0.0: 107 siswa). Pola ini mengindikasikan bahwa pencapaian akademik tinggi relatif langka dalam dataset, sedangkan hasil rendah lebih umum. Ketidakseimbangan ini berpotensi memengaruhi performa model prediktif karena algoritma cenderung "memprediksi" kelas mayoritas. Faktor seperti absensi, waktu belajar, atau dukungan lingkungan mungkin menjadi penyebab utama dominasi kelas 4.0, sehingga perlu analisis lebih lanjut untuk mengidentifikasi intervensi pendidikan yang tepat.
+
+---
+
+
+Distribusi GPA (Indeks Prestasi Kumulatif) menunjukkan pola unimodal dengan mayoritas siswa berada di rentang 1.5–2.5 , sedangkan jumlah siswa menurun secara bertahap untuk GPA di bawah 1.0 atau di atas 3.0 . Hal ini mencerminkan bahwa sebagian besar siswa memiliki kemampuan akademik stabil di kategori menengah, tetapi sedikit yang mencapai nilai sangat tinggi atau sangat rendah. Beberapa siswa dengan GPA tinggi (>3.0) mungkin mendapat dukungan eksternal seperti les privat atau memiliki strategi belajar efisien, sementara yang berada di GPA rendah (<1.0) mungkin memerlukan pendekatan khusus untuk meningkatkan prestasi. Korelasi kuat antara GPA dan GradeClass menunjukkan bahwa kedua variabel ini saling terkait erat dalam menentukan performa akademik.
+
+---
+
+Visualisasi distribusi absensi berdasarkan GradeClass mengungkapkan tren positif : semakin rendah kelas nilai akhir (semakin tinggi angka GradeClass), semakin tinggi tendensi jumlah absensi. Siswa dengan GradeClass 4.0 memiliki median absensi tertinggi (>20 hari) , sementara GradeClass 0.0 memiliki median absensi terendah (>3–4 hari). meskipun ada pengecualian seperti 33 siswa GradeClass 0.0 dengan absensi >10 hari, Ini menunjukkan bahwa walaupun siswa tersebut jarang masuk, faktor lain—seperti efisiensi belajar atau dukungan orang tua—dapat "menutupi" dampak negatif absensi. Intervensi seperti program bimbingan khusus atau monitoring absensi perlu diprioritaskan untuk kelas 3.0–4.0, sementara siswa GradeClass tinggi perlu dievaluasi untuk mencegah burnout atau kelelahan belajar.
+
+---
+
+Distribusi StudyTimeWeekly berdasarkan GradeClass menunjukkan tren negatif semakin tinggi kelas nilai akhir (semakin rendah angka GradeClass), semakin tinggi tendensi waktu belajar mingguan. Siswa dengan GradeClass 0.0 memiliki median waktu belajar ~12–15 jam/minggu , sementara GradeClass 4.0 hanya mencatat ~8–10 jam/minggu . Meski ada outlier seperti siswa dengan waktu belajar ekstrem (>18 jam/minggu) di GradeClass 0.0, sebagian besar pola ini selaras dengan hipotesis bahwa waktu belajar adalah indikator penting dalam pencapaian akademik. Namun, beberapa siswa dengan waktu belajar rendah tetap mencapai GradeClass baik, mengindikasikan bahwa kualitas belajar atau faktor lain (misalnya, les tambahan) mungkin lebih berpengaruh. Korelasi negatif kuat antara StudyTimeWeekly dan GradeClass memperkuat hubungan ini, tetapi hubungan tersebut tidak mutlak karena ada kasus di mana waktu belajar tinggi tidak selalu menghasilkan nilai terbaik.
+
+---
+
+Secara keseluruhan, data menunjukkan hubungan kuat antara GradeClass dengan absensi dan waktu belajar. Kelas nilai yang tidak seimbang, dominasi GPA menengah, serta tren jelas pada absensi dan waktu belajar mengindikasikan bahwa faktor-faktor ini saling terkait erat dalam menentukan performa akademik. Namun, pengecualian pada beberapa siswa menunjukkan bahwa kualitas belajar, dukungan eksternal, atau efisiensi belajar juga merupakan variabel penting yang perlu dipertimbangkan untuk intervensi pendidikan yang lebih personal.
 
 ## Data Preparation
 Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.

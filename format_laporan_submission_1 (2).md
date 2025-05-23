@@ -243,27 +243,66 @@ Visualisasi distribusi absensi berdasarkan GradeClass mengungkapkan tren positif
 
 Distribusi StudyTimeWeekly berdasarkan GradeClass menunjukkan tren negatif semakin tinggi kelas nilai akhir (semakin rendah angka GradeClass), semakin tinggi tendensi waktu belajar mingguan. Siswa dengan GradeClass 0.0 memiliki median waktu belajar ~12–15 jam/minggu , sementara GradeClass 4.0 hanya mencatat ~8–10 jam/minggu . Meski ada outlier seperti siswa dengan waktu belajar ekstrem (>18 jam/minggu) di GradeClass 0.0, sebagian besar pola ini selaras dengan hipotesis bahwa waktu belajar adalah indikator penting dalam pencapaian akademik. Namun, beberapa siswa dengan waktu belajar rendah tetap mencapai GradeClass baik, mengindikasikan bahwa kualitas belajar atau faktor lain (misalnya, les tambahan) mungkin lebih berpengaruh. Korelasi negatif kuat antara StudyTimeWeekly dan GradeClass memperkuat hubungan ini, tetapi hubungan tersebut tidak mutlak karena ada kasus di mana waktu belajar tinggi tidak selalu menghasilkan nilai terbaik.
 
-![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(18).png?raw=true)
-![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(19).png?raw=true)
 
 ---
 
 Secara keseluruhan, data menunjukkan hubungan kuat antara GradeClass dengan absensi dan waktu belajar. Kelas nilai yang tidak seimbang, dominasi GPA menengah, serta tren jelas pada absensi dan waktu belajar mengindikasikan bahwa faktor-faktor ini saling terkait erat dalam menentukan performa akademik. Namun, pengecualian pada beberapa siswa menunjukkan bahwa kualitas belajar, dukungan eksternal, atau efisiensi belajar juga merupakan variabel penting yang perlu dipertimbangkan untuk intervensi pendidikan yang lebih personal.
+
+![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(18).png?raw=true)
+![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(19).png?raw=true)
+
+### **Analisis Matrix Korelasi**
+
+Berdasarkan heatmap matriks korelasi yang Anda tampilkan, berikut adalah analisis mendalam mengenai hubungan antar fitur numerik dalam dataset "Student Performance: Academic Success Factors in High School Students":
+
+### 1. Korelasi Positif Terkuat
+
+- **GradeClass vs Absences: +0.73**
+
+- Artinya, semakin tinggi jumlah ketidakhadiran (Absences), maka semakin tinggi pula nilai GradeClass. Karena GradeClass direpresentasikan dalam bentuk label diskrit, nilai lebih besar mungkin mewakili performa akademik yang lebih buruk (misalnya, kelas 4 berarti nilai terendah).Maka korelasi positif ini menunjukkan: Absensi tinggi berkorelasi dengan performa akademik buruk.
+
+### 2. Korelasi Negatif Terkuat
+
+- **GPA vs Absences: -0.92**
+
+- Ini adalah hubungan negatif yang sangat kuat. Artinya: semakin sering siswa tidak hadir, semakin rendah GPA-nya. Hal ini masuk akal secara intuitif, karena absensi berlebih menyebabkan kehilangan materi pelajaran.
+
+- **GPA vs GradeClass: -0.78**
+
+- Korelasi negatif tinggi menunjukkan bahwa semakin tinggi GPA siswa, maka GradeClass semakin rendah (berarti lebih baik). Mengonfirmasi bahwa GradeClass kemungkinan besar mewakili kategori performa, dari baik (0) ke buruk (4).
+
+### 3. Korelasi Antar Variable/Korelasi Lemah/Tidak Signifikan
+
+- StudyTimeWeekly & GPA :
+
+- Korelasi +0.18 (merah muda) menunjukkan hubungan positif sedang : jam belajar tinggi menunjukan bahwa siswa yang meluangkan waktu belajar extra akan memiliki GPA tinggi walaupun tidak signnifikan karena GPA tinggi tidak menjamin gradeclass bagus yang terbukti dengan korelasi -0.13 antara StudyTimeWeekly dan ClassGrade yang menyatakan hubungan negatif sedang
+
+- ParentalSupport
+
+- Korelasi +0.19 (merah muda) menunjukkan hubungan positif sedang : dukungan orang tua cenderung meningkatkan partisipasi siswa dan motivasi untuk terus belajar walaupun korelasi ini terdapat -0.14 pada hubungan parentalsupport dan gradeclass yang menunjukan korelasi negatif sedang yang juga berarti walaupun dapat dukungan penuh orang tua, kemauan siswa untuk belajar dan meningkatkan perfoma kembali pada diri sendiri.
+
+- Tutoring & GPA :
+- Korelasi +0.15 (merah muda) mengindikasikan bahwa siswa yang menggunakan bimbingan les untuk menunjang perfoma akademik mereka tetapi tutoring ini memiliki korelasi negatif sedang dengan gradeclass sebesar -0.11 yang berarti bimbingan belajar tidak menjamin perfoma akademik membaik secara signifikan dan perfoma akademik ditentukan oleh diri sendiri.
+
+**Kesimpulan:**
+
+Matriks korelasi menunjukkan bahwa Absences dan GPA dan absences memiliki pengaruh paling signifikan terhadap GradeClass, dengan korelasi positif kuat (+0.73) untuk absensi dan negatif kuat (-0.78 dan -0.92) untuk GPA. Waktu belajar mingguan (StudyTimeWeekly ) juga berkontribusi signifikan (korelasi 0.18), meski hubungannya lebih lemah. Variabel seperti dukungan orang tua (ParentalSupport ) dan partisipasi ekstrakurikuler (Extracurricular ) memiliki korelasi positif moderat, sementara aktivitas seperti olahraga atau musik kurang relevan. Korelasi rendah antar variabel lain menunjukkan bahwa faktor seperti bimbingan les (Tutoring ) atau kegiatan sukarela (Volunteering) tidak secara langsung memengaruhi hasil akademik. Secara keseluruhan, absensi dan GPA menjadi fokus utama intervensi, sementara faktor lain perlu analisis lebih lanjut untuk memahami interaksi kompleksnya.
 
 ## Data Preparation
 
 Karena dataset sepenuhnya terdiri dari fitur numerik, maka tahap data preparation bisa dilakukan tanpa perlu One-Hot Encoding. Kita hanya perlu:
 
 - Memisahkan fitur (X) dan target (y).
+- Proses: Fitur (X): Semua kolom atau variabel dalam dataset yang akan digunakan untuk memprediksi sesuatu. Ini adalah data input. Target (y): Kolom atau variabel tunggal yang ingin diprediksi oleh model. Ini adalah data output yang menjadi tujuan model.
+- Alasan: Model machine learning belajar dari data masukan (fitur) untuk memprediksi atau mengklasifikasikan keluaran yang diinginkan (target). Pemisahan ini esensial karena model perlu tahu apa yang harus dipelajari (fitur) dan apa yang harus diprediksi (target). Tanpa pemisahan ini, model tidak akan tahu tujuan belajarnya.
 
-- Melakukan normalisasi (MinMaxScaler) agar model konvergen lebih baik.
+- Melakukan normalisasi (MinMaxScaler).
+- Proses: Data numerik dinormalisasi menggunakan teknik Min-Max Scaling agar setiap fitur memiliki skala yang sama.
+- Alasan: Normalisasi diperlukan untuk mencegah bias pada fitur tertentu yang memiliki skala lebih besar dibandingkan fitur lainnya dan membuat model konvergen lebih optimal.
 
 - Membagi data menjadi train dan test set.
-
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+- Proses: Data dibagi menjadi data latih (80%) dan data uji (20%) menggunakan train_test_split.
+- Alasan: Pembagian ini diperlukan untuk mengevaluasi performa model secara objektif pada data yang belum pernah dilihat model sebelumnya.
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.

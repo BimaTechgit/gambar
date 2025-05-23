@@ -243,12 +243,23 @@ Visualisasi distribusi absensi berdasarkan GradeClass mengungkapkan tren positif
 
 Distribusi StudyTimeWeekly berdasarkan GradeClass menunjukkan tren negatif semakin tinggi kelas nilai akhir (semakin rendah angka GradeClass), semakin tinggi tendensi waktu belajar mingguan. Siswa dengan GradeClass 0.0 memiliki median waktu belajar ~12–15 jam/minggu , sementara GradeClass 4.0 hanya mencatat ~8–10 jam/minggu . Meski ada outlier seperti siswa dengan waktu belajar ekstrem (>18 jam/minggu) di GradeClass 0.0, sebagian besar pola ini selaras dengan hipotesis bahwa waktu belajar adalah indikator penting dalam pencapaian akademik. Namun, beberapa siswa dengan waktu belajar rendah tetap mencapai GradeClass baik, mengindikasikan bahwa kualitas belajar atau faktor lain (misalnya, les tambahan) mungkin lebih berpengaruh. Korelasi negatif kuat antara StudyTimeWeekly dan GradeClass memperkuat hubungan ini, tetapi hubungan tersebut tidak mutlak karena ada kasus di mana waktu belajar tinggi tidak selalu menghasilkan nilai terbaik.
 
+![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(18).png?raw=true)
+![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(19).png?raw=true)
+
 ---
 
 Secara keseluruhan, data menunjukkan hubungan kuat antara GradeClass dengan absensi dan waktu belajar. Kelas nilai yang tidak seimbang, dominasi GPA menengah, serta tren jelas pada absensi dan waktu belajar mengindikasikan bahwa faktor-faktor ini saling terkait erat dalam menentukan performa akademik. Namun, pengecualian pada beberapa siswa menunjukkan bahwa kualitas belajar, dukungan eksternal, atau efisiensi belajar juga merupakan variabel penting yang perlu dipertimbangkan untuk intervensi pendidikan yang lebih personal.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+
+Karena dataset sepenuhnya terdiri dari fitur numerik, maka tahap data preparation bisa dilakukan tanpa perlu One-Hot Encoding. Kita hanya perlu:
+
+- Memisahkan fitur (X) dan target (y).
+
+- Melakukan normalisasi (MinMaxScaler) agar model konvergen lebih baik.
+
+- Membagi data menjadi train dan test set.
+
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Menjelaskan proses data preparation yang dilakukan

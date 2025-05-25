@@ -449,7 +449,6 @@ Logistic Regression adalah algoritma linier untuk klasifikasi yang memperkirakan
 | `solver`      | `'lbfgs'`       | Solver efisien untuk data berskala sedang dan mendukung multi-class.                     |
 | `multi_class` | `'multinomial'` | Digunakan untuk kasus klasifikasi multikelas secara langsung.                            |
 | `max_iter`    | 1000            | Jumlah iterasi maksimal untuk mencapai konvergensi.                                      |
-| `C`           | 1.0             | Invers dari kekuatan regularisasi (default). Semakin kecil → lebih kuat regularisasinya. |
 
 
 ### **Tahapan Pemodelan Logistic Regression**

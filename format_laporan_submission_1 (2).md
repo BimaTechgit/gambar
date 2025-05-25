@@ -736,11 +736,11 @@ Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), Fal
 
 #### **💡 Apakah Solusi Statement Memberi Dampak?**
 
-- ✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik.
+- ✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik dengan didapatkannya XGBOOST sebagai model dengan skor akurasi tertinggi untuk menangani deteksi perfoma akademik siswa.
 
-- ✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression & Random Forest, meningkatkan kestabilan hasil.
+- ✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression memberikan peningkatkan hasil walaupun hasilnya masih jauh dari 3 algoritma lainnya.
 
-- ✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meski masih di bawah XGBoost dalam konteks ini.
+- ✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meskipun akurasinya masih di bawah XGBoost atau random forest dalam studi kasus ini.
 
 
 #### **Kesimpulan Akhir**

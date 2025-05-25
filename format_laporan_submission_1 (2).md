@@ -613,10 +613,10 @@ XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sang
 
 4. Artificial Neural Network (ANN):
 
-  - Akurasi: 0.8162
-  - Precision: 0.8206
-  - Recall: 0.8162
-  - F1 Score: 0.8137
+  - Akurasi: 0.8079
+  - Precision: 0.8171
+  - Recall: 0.8079
+  - F1 Score: 0.8061
 
 | Kelas | TP  | FN | FP | TN  |
 | ----- | --- | -- | -- | --- |
@@ -658,7 +658,7 @@ Model dengan performa terbaik adalah:
 
 - Tetapi yang paling diunggulkan yaitu XGBoost unggul sedikit di precision (0.9225) dan F1-Score (0.9190) sementara Random Forest presicion (0.9199) dan F1-Score(0.9189).
 
-- Model ANN menghasilkan akurasi 0.8162. Meskipun cukup baik, ia memiliki sedikit penurunan pada recall (sensitivitas) dibanding Random Forest/XGBoost.
+- Model ANN menghasilkan akurasi 0.8079. Meskipun cukup baik, ia memiliki sedikit penurunan pada recall (sensitivitas) dibanding Random Forest/XGBoost.
 
 - Model Logistic Regression menunjukkan performa yang paling rendah di semua metrik, dengan akurasi hanya 0.7432, menunjukkan model ini tidak mampu menangani kompleksitas data multiklas dengan baik meskipun sudah menerapkan hyperparameter turning pada model ini.
 

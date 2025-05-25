@@ -74,7 +74,7 @@ Semua solusi akan dievaluasi menggunakan:
 
 ## Data Understanding
 
-#### 🧩 Dataset perfoma akademik yang digunakan adalah:
+#### 📚 Dataset perfoma akademik yang digunakan adalah:
 
 https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset
 
@@ -95,7 +95,13 @@ Berdasarkan hasil identifikasi pada tahap eksplorasi data awal (EDA), kondisi da
 
 ### Variabel-variabel pada Student Perfomance Academic dataset adalah sebagai berikut:
 
-### 1. Kolom Target (GradeClass)
+
+#### 1. StudentID
+- ID unik untuk setiap siswa (identifikasi individual).
+- Tidak digunakan sebagai fitur prediktor karena tidak memuat informasi bermakna secara langsung untuk model klasifikasi.
+
+
+### 2. Kolom Target (GradeClass)
 Kolom GradeClass adalah variabel dependen (target) yang akan diprediksi oleh model dalam tugas klasifikasi. Nilai dari GradeClass berbentuk kategori numerik diskrit:
 
 * 0.0: Sangat Baik
@@ -110,7 +116,7 @@ Kolom GradeClass adalah variabel dependen (target) yang akan diprediksi oleh mod
 
 Tujuan analisis prediktif adalah memprediksi kelas nilai siswa berdasarkan berbagai faktor karakteristik dan kebiasaan mereka.
 
-### 2. Indeks Prestasi Kumulatif (GPA)
+### 3. Indeks Prestasi Kumulatif (GPA)
 
 Kolom GPA adalah nilai akademik akhir dalam skala desimal (misal: 0.0 – 4.0).
 
@@ -126,7 +132,7 @@ Kolom GPA adalah nilai akademik akhir dalam skala desimal (misal: 0.0 – 4.0).
 
 GPA bisa digunakan sebagai fitur prediktor terhadap GradeClass dengan analisis Hubungan antara GPA dan GradeClass bersifat kuat dan langsung, menjadikan GPA salah satu fitur utama dalam model prediksi.
 
-### 3. Usia Siswa (Age)
+### 4. Usia Siswa (Age)
 
 Kolom Age menunjukkan usia siswa (dalam tahun), yang umumnya berada di rentang 15 hingga 18 tahun, sesuai dengan usia sekolah menengah atas.
 
@@ -136,14 +142,14 @@ Kolom Age menunjukkan usia siswa (dalam tahun), yang umumnya berada di rentang 1
 
 * Sebaliknya, siswa yang lebih muda dan mendapat nilai baik bisa mencerminkan siswa berprestasi.
 
-### 4. Jenis Kelamin (Gender)
+### 5. Jenis Kelamin (Gender)
 Kolom Gender dikodekan sebagai:
 
 * 0: Laki-laki
 
 * 1: Perempuan
 
-### 5. Etnis Siswa (Ethnicity)
+### 6. Etnis Siswa (Ethnicity)
 
 Kolom Ethnicity menunjukkan latar belakang etnis siswa, dikodekan numerik (0, 1, 2, dst). pengkodean dikatagorikan sebagai berikut:
 
@@ -154,7 +160,7 @@ Kolom Ethnicity menunjukkan latar belakang etnis siswa, dikodekan numerik (0, 1,
 
 Analisis dapat mengungkap disparitas pencapaian akademik antar kelompok etnis dan menginformasikan kebijakan pendidikan yang inklusif.
 
-### 6. Pendidikan Orang Tua (ParentalEducation)
+### 7. Pendidikan Orang Tua (ParentalEducation)
 
 Kolom ParentalEducation merepresentasikan tingkat pendidikan tertinggi orang tua:
 
@@ -164,14 +170,14 @@ Kolom ParentalEducation merepresentasikan tingkat pendidikan tertinggi orang tua
 * 3: SMA
 * 4: Perguruan Tinggi
 
-### 7. Waktu Belajar per Minggu (StudyTimeWeekly)
+### 8. Waktu Belajar per Minggu (StudyTimeWeekly)
 
 Kolom StudyTimeWeekly menunjukkan jumlah jam yang dihabiskan siswa untuk belajar setiap minggu (angka desimal).
 
 * Semakin tinggi waktu belajar, umumnya berkorelasi positif dengan GPA dan GradeClass.
 * Namun perlu diperhatikan: efisiensi dan kualitas belajar lebih penting daripada kuantitas semata.
 
-### 8. Jumlah Ketidakhadiran (Absences)
+### 9. Jumlah Ketidakhadiran (Absences)
 
 Kolom Absences mencatat jumlah hari siswa tidak hadir di sekolah.
 
@@ -179,7 +185,7 @@ Kolom Absences mencatat jumlah hari siswa tidak hadir di sekolah.
 
 * Kolom ini penting sebagai fitur prediktor utama dalam model klasifikasi.
 
-### 9. Ikut Les Tambahan (Tutoring)
+### 10. Ikut Les Tambahan (Tutoring)
 
 Kolom Tutoring menunjukkan apakah siswa mengikuti les/bimbingan belajar:
 
@@ -188,7 +194,7 @@ Kolom Tutoring menunjukkan apakah siswa mengikuti les/bimbingan belajar:
 
 Les tambahan sering meningkatkan pemahaman konsep akademik. Bisa menjadi indikator dukungan keluarga dan motivasi siswa.
 
-### 10. Dukungan Orang Tua (ParentalSupport)
+### 11. Dukungan Orang Tua (ParentalSupport)
 
 Kolom ini menggambarkan tingkat keterlibatan orang tua dalam pendidikan anak, dikodekan ordinal:
 
@@ -200,7 +206,7 @@ Kolom ini menggambarkan tingkat keterlibatan orang tua dalam pendidikan anak, di
 
 Dukungan orang tua mungkin memiliki pengaruh signifikan dalam membentuk perilaku belajar siswa dan motivasi internal.
 
-### 11. Kegiatan Penunjang Lainnya
+### 12. Kegiatan Penunjang Lainnya
 
 **A. Partisipasi Ekstrakurikuler (Extracurricular)**
 

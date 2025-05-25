@@ -397,16 +397,16 @@ XGBoost (Extreme Gradient Boosting) adalah algoritma boosting yang sangat powerf
 
 XGBoost dikenal karena efisiensi, fleksibilitas, dan performanya yang tinggi di kompetisi data science.
 
-| Parameter          | Fungsi                                                          |
-| ------------------ | --------------------------------------------------------------- |
-| `n_estimators`     | Jumlah pohon boosting                                           |
-| `learning_rate`    | Ukuran langkah tiap iterasi pembelajaran                        |
-| `max_depth`        | Kedalaman maksimum pohon                                        |
-| `subsample`        | Proporsi sampel pelatihan yang digunakan per pohon              |
-| `colsample_bytree` | Proporsi fitur yang digunakan saat membangun pohon              |
-| `objective`        | Fungsi tujuan; untuk klasifikasi multiclass → `'multi:softmax'` |
-| `num_class`        | Jumlah kelas target (wajib jika multiclass)                     |
-| `random_state`     | Untuk reproducibility hasil                                     |
+| Parameter          | Nilai             | Penjelasan                                                                               |
+| ------------------ | ----------------- | ---------------------------------------------------------------------------------------- |
+| `n_estimators`     | 100               | Jumlah boosting rounds (pohon) yang digunakan. Semakin besar → lebih stabil.             |
+| `learning_rate`    | 0.1               | Ukuran langkah pembaruan bobot tiap iterasi (semakin kecil → lebih lambat, tapi akurat). |
+| `max_depth`        | 5                 | Kedalaman maksimum dari setiap pohon keputusan.                                          |
+| `subsample`        | 0.8               | Proporsi sampel data pelatihan yang digunakan untuk tiap pohon.                          |
+| `colsample_bytree` | 0.8               | Proporsi fitur yang digunakan saat membangun tiap pohon.                                 |
+| `objective`        | `'multi:softmax'` | Fungsi objektif untuk klasifikasi multikelas.                                            |
+| `num_class`        | 5                 | Jumlah kelas target GradeClass (0–4).                                                    |
+| `random_state`     | 42                | Untuk memastikan hasil eksperimen yang konsisten.                                        |
 
 ### **Tahapan Pemodelan XGBoost**
 1. Inisialisasi model dengan parameter:
@@ -443,12 +443,14 @@ XGBoost dikenal karena efisiensi, fleksibilitas, dan performanya yang tinggi di 
 Logistic Regression adalah algoritma linier untuk klasifikasi yang memperkirakan probabilitas kelas target menggunakan fungsi sigmoid. Meskipun namanya "regression", algoritma ini digunakan untuk klasifikasi biner atau multiklas. Cocok untuk baseline model dan dataset yang fitur-fiturnya berhubungan secara linier dengan target.
 
 ### **Parameter Penting**
-| Parameter     | Fungsi                                                          |
-| ------------- | --------------------------------------------------------------- |
-| `penalty`     | Jenis regularisasi (`'l2'` umum digunakan)                      |
-| `solver`      | Algoritma optimisasi (`'lbfgs'` cocok untuk multiclass)         |
-| `multi_class` | `'multinomial'` untuk multi-kelas                               |
-| `max_iter`    | Iterasi maksimum untuk konvergensi                              |
+| Parameter     | Nilai           | Penjelasan                                                                               |
+| ------------- | --------------- | ---------------------------------------------------------------------------------------- |
+| `penalty`     | `'l2'`          | Regularisasi Ridge untuk menghindari overfitting.                                        |
+| `solver`      | `'lbfgs'`       | Solver efisien untuk data berskala sedang dan mendukung multi-class.                     |
+| `multi_class` | `'multinomial'` | Digunakan untuk kasus klasifikasi multikelas secara langsung.                            |
+| `max_iter`    | 1000            | Jumlah iterasi maksimal untuk mencapai konvergensi.                                      |
+| `C`           | 1.0             | Invers dari kekuatan regularisasi (default). Semakin kecil → lebih kuat regularisasinya. |
+
 
 ### **Tahapan Pemodelan Logistic Regression**
 
@@ -488,17 +490,18 @@ Artificial Neural Network (ANN) adalah model deep learning yang terinspirasi dar
 
 ### **Parameter Penting dalam ANN**
 
-| Parameter       | Keterangan                                                                      |
-| --------------- | ------------------------------------------------------------------------------- |
-| `input_dim`     | Jumlah fitur dari data masukan.                                                 |
-| `hidden_layers` | Jumlah lapisan tersembunyi.                                                     |
-| `units`         | Jumlah neuron dalam tiap layer.                                                 |
-| `activation`    | Fungsi aktivasi (ReLU, Sigmoid, Softmax, dsb).                                  |
-| `optimizer`     | Metode optimasi (Adam, SGD, RMSprop).                                           |
-| `loss`          | Fungsi loss (categorical\_crossentropy atau sparse\_categorical\_crossentropy). |
-| `epochs`        | Jumlah iterasi pelatihan model.                                                 |
-| `batch_size`    | Ukuran batch data pada setiap iterasi.                                          |
-| `metrics`       | Metode evaluasi seperti accuracy, precision, dll.                               |
+| Parameter       | Nilai                             | Penjelasan                                                      |
+| --------------- | --------------------------------- | --------------------------------------------------------------- |
+| `input_dim`     | 14                                | Jumlah fitur (setelah StudentID dihapus).                       |
+| `hidden_layers` | 2                                 | Jumlah lapisan tersembunyi (dense).                             |
+| `units`         | 128 (layer 1), 64 (layer 2)       | Jumlah neuron pada masing-masing layer.                         |
+| `activation`    | ReLU (hidden), Softmax (output)   | Fungsi aktivasi untuk menangkap non-linearitas dan klasifikasi. |
+| `optimizer`     | Adam                              | Algoritma optimasi adaptif.                                     |
+| `loss`          | sparse\_categorical\_crossentropy | Cocok untuk target numerik integer dengan kelas >2.             |
+| `epochs`        | 100                               | Iterasi pelatihan.                                              |
+| `batch_size`    | 32                                | Jumlah sampel dalam satu batch training.                        |
+| `metrics`       | Accuracy                          | Metrik utama evaluasi kinerja model.                            |
+
 
 ### **Tahapan & Parameter Pemodelan ANN**
 1. Normalisasi Data: Skala semua fitur ke rentang [0, 1] agar ANN cepat konvergen.

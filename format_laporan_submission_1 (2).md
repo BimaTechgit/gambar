@@ -75,7 +75,13 @@ Semua solusi akan dievaluasi menggunakan:
 ## Data Understanding
 
 #### 🔢 **Jumlah Data**
-Dataset ini terdiri dari 2392 baris dan 15 kolom yang merepresentasikan informasi karakteristik siswa, lingkungan keluarga, kebiasaan belajar, serta performa akademik mereka di sekolah menengah atas. Variabel-variabel dalam dataset ini mencakup data numerik murni yang dapat digunakan untuk memprediksi kesuksesan akademik berdasarkan faktor-faktor personal dan eksternal menggunakan metode klasifikasi.
+
+Dataset ini terdiri dari:
+
+- 2392 baris
+- 15 kolom
+
+dataset tersebut merepresentasikan informasi karakteristik siswa, lingkungan keluarga, kebiasaan belajar, serta performa akademik mereka di sekolah menengah atas. Variabel-variabel dalam dataset ini mencakup data numerik murni yang dapat digunakan untuk memprediksi kesuksesan akademik berdasarkan faktor-faktor personal dan eksternal menggunakan metode klasifikasi.
 
 #### 🧹 **Kondisi Data**
 

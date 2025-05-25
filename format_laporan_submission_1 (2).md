@@ -366,10 +366,6 @@ Random Forest adalah algoritma ensemble learning berbasis decision tree yang men
 
 - Setelah pelatihan, model digunakan untuk melakukan prediksi terhadap data uji (X_test).
 
-4. Interpretasi Model (Opsional)
-
-- Random Forest mendukung visualisasi feature importance, yang dapat membantu dalam interpretasi model terhadap pengaruh variabel terhadap target.
-
 
 ### **Kelebihan Random Forest**
 

@@ -245,6 +245,8 @@ Kolom ini merepresentasikan apakah siswa aktif dalam kegiatan sosial/relawan:
 Siswa yang aktif dalam kegiatan sukarela cenderung memiliki keterampilan sosial, empati, dan motivasi intrinsik yang tinggi.
 
 ### visualisasi data atau exploratory data analysis.
+
+![Absences](https://github.com/user-attachments/assets/0b9519f0-ea5d-4876-a8df-13c38f007605)
 ![gradeclass](https://github.com/BimaTechgit/gambar/blob/main/download%20(11).png?raw=true)
 ![GPA](https://github.com/BimaTechgit/gambar/blob/main/download%20(12).png?raw=true)
 ![Absences](https://github.com/BimaTechgit/gambar/blob/main/download%20(13).png?raw=true)

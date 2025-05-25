@@ -98,9 +98,9 @@ Berdasarkan hasil identifikasi pada tahap eksplorasi data awal (EDA), kondisi da
 ### Variabel-variabel pada Student Perfomance Academic dataset adalah sebagai berikut:
 
 
-#### 1. StudentID
-- ID unik untuk setiap siswa (identifikasi individual).
-- Tidak digunakan sebagai fitur prediktor karena tidak memuat informasi bermakna secara langsung untuk model klasifikasi.
+### 1. StudentID
+- ID unik untuk setiap siswa (identifikasi individual). ID siswa terdiri dari range (1001-3992)
+- Karena sifatnya unik, ID tidak digunakan sebagai fitur prediktor karena tidak memuat informasi bermakna secara langsung untuk model klasifikasi.
 
 
 ### 2. Kolom Target (GradeClass)

@@ -316,15 +316,19 @@ Matriks korelasi menunjukkan bahwa Absences dan GPA dan absences memiliki pengar
 
 Karena dataset sepenuhnya terdiri dari fitur numerik, maka tahap data preparation bisa dilakukan tanpa perlu One-Hot Encoding. Kita hanya perlu:
 
-- Memisahkan fitur (X) dan target (y).
+1. Memisahkan fitur (X) dan target (y).
 - Proses: Fitur (X): Semua kolom atau variabel dalam dataset yang akan digunakan untuk memprediksi sesuatu. Ini adalah data input. Target (y): Kolom atau variabel tunggal yang ingin diprediksi oleh model. Ini adalah data output yang menjadi tujuan model.
 - Alasan: Model machine learning belajar dari data masukan (fitur) untuk memprediksi atau mengklasifikasikan keluaran yang diinginkan (target). Pemisahan ini esensial karena model perlu tahu apa yang harus dipelajari (fitur) dan apa yang harus diprediksi (target). Tanpa pemisahan ini, model tidak akan tahu tujuan belajarnya.
 
-- Melakukan normalisasi (MinMaxScaler).
+2. Menghapus Kolom yang Tidak Relevan
+- Proses: Kolom StudentID dihapus dari dataset karena merupakan identifier unik yang tidak memiliki kontribusi prediktif terhadap target (GradeClass).
+- Alasan: StudentID tidak merepresentasikan informasi karakteristik siswa dan hanya berfungsi sebagai penanda administratif. Memasukkannya ke dalam model justru dapat mengganggu proses pembelajaran model karena bersifat acak dan tidak bermakna.
+
+3. Melakukan normalisasi (MinMaxScaler).
 - Proses: Data numerik dinormalisasi menggunakan teknik Min-Max Scaling agar setiap fitur memiliki skala yang sama.
 - Alasan: Normalisasi diperlukan untuk mencegah bias pada fitur tertentu yang memiliki skala lebih besar dibandingkan fitur lainnya dan membuat model konvergen lebih optimal.
 
-- Membagi data menjadi train dan test set.
+4. Membagi data menjadi train dan test set.
 - Proses: Data dibagi menjadi data latih (80%) dan data uji (20%) menggunakan train_test_split.
 - Alasan: Pembagian ini diperlukan untuk mengevaluasi performa model secara objektif pada data yang belum pernah dilihat model sebelumnya.
 

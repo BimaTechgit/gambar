@@ -29,7 +29,7 @@ Dengan mempertimbangkan pentingnya prediksi performa akademik dalam meningkatkan
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-1. Pernyataan Masalah 1: Institusi pendidikan kesulitan dalam mengidentifikasi siswa yang berisiko mengalami penurunan performa akademik sejak dini karena kompleksitas faktor yang mempengaruhi, seperti kehadiran, aktivitas ekstrakurikuler, dukungan orang tua, dan kebiasaan belajar.
+1. Pernyataan Masalah 1: Institusi pendidikan kesulitan dalam mengidentifikasi siswa yang berisiko mengalami penurunan performa akademik sejak dini, karena kompleksitas faktor yang mempengaruhi, seperti kehadiran, aktivitas ekstrakurikuler, dukungan orang tua, dan kebiasaan belajar.
 
 2. Pernyataan Masalah 2: Belum tersedia analisis prediktif berbasis data yang mampu secara akurat memperkirakan nilai akhir siswa atau kategori kelas akademik (GradeClass), sehingga intervensi pendidik sering kali bersifat reaktif, bukan proaktif.
 
@@ -40,13 +40,11 @@ Pemanfaatan algoritma pembelajaran mesin dan pembelajaran mendalam di tingkat pe
 
 Menjelaskan tujuan dari pernyataan masalah:
 
-1. Memprediksi kelas performa akademik (GradeClass) siswa berdasarkan faktor-faktor demografis, kebiasaan belajar, serta aktivitas di dalam dan luar sekolah.
+1. Mengembangkan model prediktif GradeClass siswa berdasarkan data demografis, kebiasaan belajar, dan aktivitas siswa, guna mengidentifikasi siswa yang berisiko rendah atau tinggi performa akademiknya secara dini.
+  
+2. Membangun sistem klasifikasi berbasis data yang dapat secara akurat memetakan kategori nilai akademik akhir siswa, sehingga sekolah dapat melakukan intervensi yang lebih proaktif dan terarah.
 
-2. Mengidentifikasi pola dan variabel utama yang paling memengaruhi kesuksesan akademik siswa.
-
-3. Memberikan rekomendasi berbasis data bagi pihak sekolah untuk merancang intervensi pendidikan yang lebih personal dan tepat sasaran.
-
-4. Mendukung pengambilan keputusan strategis dalam peningkatan mutu pendidikan dan pembinaan siswa berisiko rendah maupun tinggi.
+3. Mengeksplorasi dan membandingkan efektivitas algoritma machine learning dan deep learning, untuk menghasilkan model yang akurat, stabil, dan cukup interpretatif dalam mendukung pengambilan keputusan pendidik.
 
 Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
 

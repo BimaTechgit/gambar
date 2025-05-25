@@ -709,38 +709,38 @@ Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), Fal
 
 **Problem 1: Identifikasi siswa berisiko rendah performa sejak dini**
 
-✅ Terjawab — Model XGBoost dan Random Forest menunjukkan akurasi tinggi dan recall kuat. Artinya, siswa dengan risiko rendah atau tinggi dapat diidentifikasi sejak awal secara kuantitatif dan objektif.
+- ✅ Terjawab — Model XGBoost dan Random Forest menunjukkan akurasi tinggi dan recall kuat. Artinya, siswa dengan risiko rendah atau tinggi dapat diidentifikasi sejak awal secara kuantitatif dan objektif.
 
 **Problem 2: Tidak adanya sistem prediktif berbasis data untuk GradeClass**
 
-✅ Terjawab — Model klasifikasi GradeClass berhasil dibangun dan diuji. XGBoost memberikan hasil terbaik dan stabil secara metrik prediksi kelas nilai akhir serta menjadi jawaban untuk melakukan analisis prediktif.
+- ✅ Terjawab — Model klasifikasi GradeClass berhasil dibangun dan diuji. XGBoost memberikan hasil terbaik dan stabil secara metrik prediksi kelas nilai akhir serta menjadi jawaban untuk melakukan analisis prediktif.
 
 **Problem 3: Terbatasnya pemanfaatan ML dan DL di pendidikan menengah**
 
-✅ Terjawab — Proyek ini menguji empat algoritma, termasuk ANN (deep learning) dan menunjukkan bahwa metode ini layak digunakan serta memiliki performa cukup baik untuk diterapkan di sektor pendidikan menengah.
+- ✅ Terjawab — Proyek ini menguji empat algoritma, termasuk ANN (deep learning) dan menunjukkan bahwa metode ini layak digunakan serta memiliki performa cukup baik untuk diterapkan di sektor pendidikan menengah.
 
-### 🎯 **Apakah Goals Proyek Berhasil Dicapai?**
+#### 🎯 **Apakah Goals Proyek Berhasil Dicapai?**
 
 **Goal 1: Prediksi GradeClass siswa untuk deteksi dini risiko akademik**
 
-✅ Berhasil — Model dapat mengklasifikasikan siswa dalam lima kelas GradeClass, mempermudah pendidik melakukan tindakan preventif.
+- ✅ Berhasil — Model dapat mengklasifikasikan siswa dalam lima kelas GradeClass, mempermudah pendidik melakukan tindakan preventif.
 
 **Goal 2: Membangun sistem klasifikasi berbasis data**
 
-✅ Berhasil — Model yang dibangun dapat diintegrasikan ke dalam sistem sekolah sebagai alat bantu evaluasi akademik berbasis data.
+- ✅ Berhasil — Model yang dibangun dapat diintegrasikan ke dalam sistem sekolah sebagai alat bantu evaluasi akademik berbasis data.
 
 **Goal 3: Evaluasi dan perbandingan berbagai algoritma**
 
-✅ Berhasil — Dilakukan evaluasi pada ML klasik (RF, XGB, LR) dan DL (ANN), dengan XGBoost terbukti paling stabil dan akurat.
+- ✅ Berhasil — Dilakukan evaluasi pada ML klasik (RF, XGB, LR) dan DL (ANN), dengan XGBoost terbukti paling stabil dan akurat.
 
 
-**💡 Apakah Solusi Statement Memberi Dampak?**
+#### **💡 Apakah Solusi Statement Memberi Dampak?**
 
-✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik.
+- ✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik.
 
-✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression & Random Forest, meningkatkan kestabilan hasil.
+- ✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression & Random Forest, meningkatkan kestabilan hasil.
 
-✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meski masih di bawah XGBoost dalam konteks ini.
+- ✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meski masih di bawah XGBoost dalam konteks ini.
 
 
 #### **Kesimpulan Akhir**

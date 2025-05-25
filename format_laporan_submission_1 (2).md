@@ -246,11 +246,11 @@ Siswa yang aktif dalam kegiatan sukarela cenderung memiliki keterampilan sosial,
 
 ### visualisasi data atau exploratory data analysis.
 
-![Absences](https://github.com/user-attachments/assets/0b9519f0-ea5d-4876-a8df-13c38f007605)
-![gradeclass](https://github.com/BimaTechgit/gambar/blob/main/download%20(11).png?raw=true)
-![GPA](https://github.com/BimaTechgit/gambar/blob/main/download%20(12).png?raw=true)
-![Absences](https://github.com/BimaTechgit/gambar/blob/main/download%20(13).png?raw=true)
-![StudyTimeWeekly](https://github.com/BimaTechgit/gambar/blob/main/download%20(14).png?raw=true)
+![gradeclass](https://github.com/user-attachments/assets/e1f2dadc-b04c-4d38-a168-8c5a0c1a58c8)
+![GPA](https://github.com/user-attachments/assets/69e9361b-12cf-43a5-b109-bac63805ea3c)
+![Absences](https://github.com/user-attachments/assets/29a409b2-63dc-48ce-add9-364b4a438a7c)
+![studytime](https://github.com/user-attachments/assets/506c626d-98d7-4985-837a-6ae5c236eda0)
+
 
 ### Analisis Data berdasarkan Grafik
 
@@ -544,7 +544,7 @@ Artificial Neural Network (ANN) adalah model deep learning yang terinspirasi dar
 | Logistic Regression    | 0.9206      | 0.9199        | 0.9206      | 0.9189        |
 | Random Forest          | 0.9206      | 0.9225        | 0.9206      | 0.9190        |
 | Support Vector Machine | 0.7432      | 0.7332        | 0.7432      | 0.7353        |
-| Deep Learning          | 0.8162      | 0.8206        | 0.8162      | 0.8137        |
+| Deep Learning          | 0.8079      | 0.8171        | 0.8079      | 0.8061        |
 
 
 berdasarkan hasil membangun model dan juga hasil akurasi dari 4 algoritma yang ada, Model Terbaik adalah XGBoost Classifier
@@ -563,7 +563,7 @@ XGBoost sangat powerful dan lebih kompleks, cocok untuk kompetisi atau data sang
 
  Berdasarkan hasil evaluasi model menggunakan metrik Akurasi, Precision, Recall, dan F1 Score, berikut adalah analisis dari masing-masing model:
 
- ![confussion](https://github.com/BimaTechgit/gambar/blob/main/download%20(17).png?raw=true)
+![confussion](https://github.com/user-attachments/assets/03e16b34-96ef-4461-9d3e-d0d0d0435e85)
 
 1. Random Forest:
 

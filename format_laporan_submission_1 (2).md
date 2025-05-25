@@ -73,10 +73,23 @@ Semua solusi akan dievaluasi menggunakan:
 
 
 ## Data Understanding
-Dataset perfoma akademik yang digunakan adalah:
+#### Dataset perfoma akademik yang digunakan adalah:
+
 https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset
 
-Dataset ini terdiri dari 2392 baris dan 15 kolom, yang mencakup berbagai informasi penting tentang karakteristik siswa, lingkungan keluarga, kebiasaan belajar, serta performa akademik mereka. Variabel-variabel dalam dataset ini mencakup data numerik murni yang dapat digunakan untuk memprediksi kesuksesan akademik berdasarkan faktor-faktor personal dan eksternal menggunakan metode klasifikasi.
+#### 🔢 Jumlah Data
+Dataset ini terdiri dari 2392 baris dan 15 kolom yang merepresentasikan informasi karakteristik siswa, lingkungan keluarga, kebiasaan belajar, serta performa akademik mereka di sekolah menengah atas. Variabel-variabel dalam dataset ini mencakup data numerik murni yang dapat digunakan untuk memprediksi kesuksesan akademik berdasarkan faktor-faktor personal dan eksternal menggunakan metode klasifikasi.
+
+🧹 Kondisi Data
+Berdasarkan hasil identifikasi pada tahap eksplorasi data awal (EDA), kondisi data adalah sebagai berikut:
+
+- Missing Value: Tidak ditemukan nilai kosong (null) pada dataset.
+
+- Data Duplikat: Tidak terdapat baris duplikat.
+
+- Dataset bersifat bersih (cleaned) dan siap digunakan untuk proses modeling tanpa perlu preprocessing lanjutan.
+
+
 
 ### Variabel-variabel pada Student Perfomance Academic dataset adalah sebagai berikut:
 

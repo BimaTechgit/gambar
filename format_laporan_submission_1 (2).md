@@ -736,11 +736,22 @@ Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), Fal
 
 #### **💡 Apakah Solusi Statement Memberi Dampak?**
 
-- ✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik dengan didapatkannya XGBOOST sebagai model dengan skor akurasi tertinggi untuk menangani deteksi perfoma akademik siswa.
+- ✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik dengan didapatkannya XGBOOST sebagai model dengan skor akurasi tertinggi untuk memberikan dampak langsung terhadap kerja sistem dalam menangani deteksi perfoma akademik siswa.
 
-- ✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression memberikan peningkatkan hasil walaupun hasilnya masih jauh dari 3 algoritma lainnya.
+- ✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression memberikan peningkatkan hasil walaupun hasilnya tidak begitu drastis dari skor sebelumnya dan masih jauh dari 3 algoritma lainnya.
 
-- ✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meskipun akurasinya masih di bawah XGBoost atau random forest dalam studi kasus ini.
+- ✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat dan stabil dalam melakukan klasifikasi, meskipun akurasinya masih di bawah XGBoost atau random forest dalam studi kasus ini.
+
+---
+
+ ### **Kesesuaian Metrik Evaluasi dengan Konteks Proyek**
+
+ | Metrik        | Relevansi                                                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Accuracy**  | Memberikan gambaran umum performa keseluruhan model. Cocok karena distribusi kelas relatif seimbang.                            |
+| **Precision** | Penting untuk **menghindari false positive** — misalnya salah mengkategorikan siswa berprestasi rendah sebagai tinggi.          |
+| **Recall**    | Penting untuk **menangkap siswa dengan risiko penurunan performa**. Intervensi lebih dini.                                      |
+| **F1 Score**  | Metrik harmonik — menyeimbangkan ketepatan dan cakupan. Cocok untuk **konteks pendidikan** yang butuh akurasi dan sensitivitas. |
 
 
 #### **Kesimpulan Akhir**
@@ -749,8 +760,8 @@ Berdasarkan evaluasi metrik dan confusion matrix:
 
 - XGBoost dipilih sebagai model terbaik karena memiliki kombinasi precision dan f1-score paling stabil dan sangat baik dalam mengklasifikasikan data multiklas tanpa overfitting.
 
-- Model ini sangat cocok untuk kasus fraud detection multiklas yang membutuhkan akurasi tinggi dan minim kesalahan klasifikasi.
+- Semua problem statement terjawab, goals tercapai, dan solusi yang dirancang terbukti berdampak dalam proses klasifikasi akademik.
 
-Dengan mempertimbangkan performa dan kebutuhan sumber daya, XGBoost dapat direkomendasikan sebagai model terbaik untuk mendukung strategi prediksi dan intervensi pendidikan yang akurat, stabil, dan bisa diandalkan.
+- Dengan mempertimbangkan performa dan kebutuhan sumber daya, XGBoost dapat direkomendasikan sebagai model terbaik untuk mendukung strategi prediksi dan intervensi pendidikan yang akurat, stabil, dan bisa diandalkan.
 
 **---Ini adalah bagian akhir laporan---**

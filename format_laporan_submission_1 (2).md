@@ -342,15 +342,16 @@ Random Forest adalah algoritma ensemble learning berbasis decision tree yang men
 
 ### **Parameter Penting Random Forest**
 
-| Parameter           | Fungsi                                                                                         |
-| ------------------- | ---------------------------------------------------------------------------------------------- |
-| `n_estimators`      | Jumlah pohon dalam hutan (semakin banyak, semakin stabil tapi lebih lambat)                    |
-| `max_depth`         | Kedalaman maksimal tiap pohon (menghindari overfitting jika terlalu dalam)                     |
-| `min_samples_split` | Jumlah minimal sampel untuk membagi node                                                       |
-| `min_samples_leaf`  | Jumlah minimal sampel di setiap daun pohon                                                     |
-| `max_features`      | Jumlah fitur yang dipertimbangkan untuk split terbaik (misalnya `'sqrt'`, `'log2'`, atau None) |
-| `class_weight`      | Menyeimbangkan bobot kelas jika target tidak seimbang (misalnya `'balanced'`)                  |
-| `random_state`      | Untuk memastikan hasil yang konsisten saat dijalankan berulang kali                            |
+| Parameter           | Nilai            | Penjelasan                                                                           |
+| ------------------- | ---------------- | ------------------------------------------------------------------------------------ |
+| `n_estimators`      | 100              | Jumlah pohon yang digunakan dalam model ensemble. Semakin besar, hasil lebih stabil. |
+| `max_depth`         | None             | Tidak membatasi kedalaman pohon, membiarkan model menentukan sendiri.                |
+| `min_samples_split` | 2 (default)      | Minimum sampel yang diperlukan untuk membagi node internal.                          |
+| `min_samples_leaf`  | 1 (default)      | Minimum sampel pada daun (leaf) pohon.                                               |
+| `max_features`      | 'sqrt' (default) | Jumlah fitur acak untuk dicoba di setiap split.                                      |
+| `class_weight`      | 'balanced'       | Menyeimbangkan bobot kelas untuk menangani data yang tidak seimbang.                 |
+| `random_state`      | 42               | Menghasilkan hasil yang konsisten setiap kali kode dijalankan.                       |
+
 
 ### **Tahapan Pemodelan dengan Random Forest**
 **1. Data Preparation**
@@ -365,20 +366,19 @@ Random Forest adalah algoritma ensemble learning berbasis decision tree yang men
 - Model dibuat dengan beberapa parameter penting untuk mengatur kompleksitas dan performa.
 
 **3. Pelatihan Model**
-- Model dilatih menggunakan X_train dan y_train.
 
-- Proses ini melibatkan pembentukan banyak pohon keputusan dan pembelajaran dari data latih.
+1. Inisialisasi Model
+- Menggunakan RandomForestClassifier dari sklearn.ensemble dengan parameter seperti di atas.
 
-**4. Prediksi**
-- Model yang telah dilatih digunakan untuk memprediksi kelas target (GradeClass) pada data uji (X_test).
+2. Training Model
+Model dilatih menggunakan data latih (X_train, y_train) untuk membangun hutan keputusan berdasarkan subset acak dari fitur dan data.
 
-**5. Evaluasi**
+3. Prediksi
+Setelah pelatihan, model digunakan untuk melakukan prediksi terhadap data uji (X_test).
 
-- Accuracy: Persentase prediksi yang benar.
+4. Interpretasi Model (Opsional)
+Random Forest mendukung visualisasi feature importance, yang dapat membantu dalam interpretasi model terhadap pengaruh variabel terhadap target.
 
-- Classification report: Mencakup precision, recall, dan f1-score.
-
-- Confusion matrix: Untuk melihat detail prediksi benar vs salah per kelas
 
 ### **Kelebihan Random Forest**
 

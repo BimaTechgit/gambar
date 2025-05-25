@@ -354,30 +354,21 @@ Random Forest adalah algoritma ensemble learning berbasis decision tree yang men
 
 
 ### **Tahapan Pemodelan dengan Random Forest**
-**1. Data Preparation**
-- Dataset dipisahkan menjadi fitur (X) dan target (y).
-
-- Karena semua kolom bersifat numerik, dilakukan normalisasi dengan MinMaxScaler agar semua fitur berada pada skala yang seragam (0–1).
-
-- Data dibagi menjadi data latih dan data uji menggunakan train_test_split dengan rasio 80:20.
-
-**2. Inisialisasi Model Random Forest Menggunakan RandomForestClassifier dari sklearn.ensemble.**
-
-- Model dibuat dengan beberapa parameter penting untuk mengatur kompleksitas dan performa.
-
-**3. Pelatihan Model**
 
 1. Inisialisasi Model
 - Menggunakan RandomForestClassifier dari sklearn.ensemble dengan parameter seperti di atas.
 
 2. Training Model
-Model dilatih menggunakan data latih (X_train, y_train) untuk membangun hutan keputusan berdasarkan subset acak dari fitur dan data.
+
+- Model dilatih menggunakan data latih (X_train, y_train) untuk membangun hutan keputusan berdasarkan subset acak dari fitur dan data.
 
 3. Prediksi
-Setelah pelatihan, model digunakan untuk melakukan prediksi terhadap data uji (X_test).
+
+- Setelah pelatihan, model digunakan untuk melakukan prediksi terhadap data uji (X_test).
 
 4. Interpretasi Model (Opsional)
-Random Forest mendukung visualisasi feature importance, yang dapat membantu dalam interpretasi model terhadap pengaruh variabel terhadap target.
+
+- Random Forest mendukung visualisasi feature importance, yang dapat membantu dalam interpretasi model terhadap pengaruh variabel terhadap target.
 
 
 ### **Kelebihan Random Forest**

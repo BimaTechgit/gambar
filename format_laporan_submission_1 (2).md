@@ -274,8 +274,9 @@ Distribusi StudyTimeWeekly berdasarkan GradeClass menunjukkan tren negatif semak
 
 Secara keseluruhan, data menunjukkan hubungan kuat antara GradeClass dengan absensi dan waktu belajar. Kelas nilai yang tidak seimbang, dominasi GPA menengah, serta tren jelas pada absensi dan waktu belajar mengindikasikan bahwa faktor-faktor ini saling terkait erat dalam menentukan performa akademik. Namun, pengecualian pada beberapa siswa menunjukkan bahwa kualitas belajar, dukungan eksternal, atau efisiensi belajar juga merupakan variabel penting yang perlu dipertimbangkan untuk intervensi pendidikan yang lebih personal.
 
-![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(18).png?raw=true)
-![heatmap](https://github.com/BimaTechgit/gambar/blob/main/download%20(19).png?raw=true)
+![heatmap](https://github.com/user-attachments/assets/8fb14055-cd9a-4a7f-b6ff-47c2e80567d1)
+![heatmap2](https://github.com/user-attachments/assets/aa8474ed-8b1b-4efd-943f-7f326f88e234)
+
 
 ### **Analisis Matrix Korelasi**
 
@@ -702,31 +703,41 @@ Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), Fal
 
 ---
 
-#### **Justifikasi Pemilihan Model Berdasarkan Metrik**
+🔍 Evaluasi Berdasarkan Business Understanding
 
-- XGBoost	Precision dan F1 tertinggi → tepat dan stabil dalam klasifikasi setiap GradeClass, minim false positive/negative.
+🧩 Apakah Model Menjawab Problem Statements?
 
-- Random Forest	Akurasi dan Recall sangat tinggi → cocok untuk deteksi siswa berisiko secara menyeluruh.
+Problem 1: Identifikasi siswa berisiko rendah performa sejak dini
 
-- ANN	Performa baik, tapi belum setara dengan model tree-based. Cocok untuk pendekatan deep learning yang bisa ditingkatkan.
+✅ Terjawab — Model XGBoost dan Random Forest menunjukkan akurasi tinggi dan recall kuat. Artinya, siswa dengan risiko rendah atau tinggi dapat diidentifikasi sejak awal secara kuantitatif dan objektif.
 
-- Logistic Regression	Performa rendah, kurang cocok untuk menangani kompleksitas dan interaksi antar faktor dalam data pendidikan.
+Problem 2: Tidak adanya sistem prediktif berbasis data untuk GradeClass
 
----
+✅ Terjawab — Model klasifikasi GradeClass berhasil dibangun dan diuji. XGBoost memberikan hasil terbaik dan stabil secara metrik prediksi kelas nilai akhir.
 
-#### **Kesesuaian Metrik Evaluasi dengan Konteks**
+Problem 3: Terbatasnya pemanfaatan ML dan DL di pendidikan menengah
 
-Karena tujuan utama proyek adalah mendeteksi secara akurat siswa yang akan berada di level performa akademik tertentu, maka penggunaan metrik berikut sangat relevan dan tepat dengan beberapa alasan:
+✅ Terjawab — Proyek ini menguji empat algoritma, termasuk ANN (deep learning), dan menunjukkan bahwa metode ini layak digunakan serta memiliki performa cukup baik untuk diterapkan di sektor pendidikan menengah.
 
-- Accuracy: Memberikan gambaran umum seberapa sering prediksi model tepat. Cocok digunakan karena data relatif seimbang antar kelas.
+🎯 Apakah Goals Proyek Berhasil Dicapai?
 
-- Precision	Penting untuk mengetahui apakah prediksi kategori tertentu (misalnya: “siswa sangat berprestasi” atau “berisiko rendah”) benar-benar akurat. Bermanfaat agar tidak salah memetakan siswa ke level tinggi tanpa justifikasi yang benar.
+Goal 1: Prediksi GradeClass siswa untuk deteksi dini risiko akademik
+✅ Berhasil — Model dapat mengklasifikasikan siswa dalam lima kelas GradeClass, mempermudah pendidik melakukan tindakan preventif.
 
-- Recall Penting untuk menangkap sebanyak mungkin siswa dalam kategori kritis (misal: siswa dengan potensi rendah). Recall tinggi berarti intervensi dini bisa dilakukan tanpa banyak siswa terlewat.
+Goal 2: Membangun sistem klasifikasi berbasis data
+✅ Berhasil — Model yang dibangun dapat diintegrasikan ke dalam sistem sekolah sebagai alat bantu evaluasi akademik berbasis data.
 
-- F1-Score	Berguna untuk menyeimbangkan Precision dan Recall, terutama saat kita peduli pada kedua aspek, yaitu akurasi deteksi dan minim kesalahan dalam identifikasi.
+Goal 3: Evaluasi dan perbandingan berbagai algoritma
+✅ Berhasil — Dilakukan evaluasi pada ML klasik (RF, XGB, LR) dan DL (ANN), dengan XGBoost terbukti paling stabil dan akurat.
 
----
+💡 Apakah Solusi Statement Memberi Dampak?
+
+✅ Solusi 1 (perbandingan beberapa algoritma) berhasil dilakukan dan memberi dampak signifikan dalam menemukan model terbaik.
+
+✅ Solusi 2 (hyperparameter tuning) diterapkan terutama pada Logistic Regression & Random Forest, meningkatkan kestabilan hasil.
+
+✅ Solusi 3 (deep learning via ANN) dieksekusi, dengan hasil menunjukkan bahwa ANN cukup kuat, meski masih di bawah XGBoost dalam konteks ini.
+
 
 #### **Kesimpulan Akhir**
 

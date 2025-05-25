@@ -85,9 +85,11 @@ Dataset ini terdiri dari 2392 baris dan 15 kolom yang merepresentasikan informas
 
 Berdasarkan hasil identifikasi pada tahap eksplorasi data awal (EDA), kondisi data adalah sebagai berikut:
 
-- Missing Value: Tidak ditemukan nilai kosong (null) pada dataset.
+- Missing Value: Tidak ditemukan nilai kosong (null) pada dataset. (Jumlah nilai hilang per kolom: Series([], dtype: int64))
 
-- Data Duplikat: Tidak terdapat baris duplikat.
+- Data Duplikat: Tidak terdapat baris duplikat. (Jumlah baris duplikat: 0)
+
+- Dataset ini memiliki 15 kolom dan seluruh kolom bertipe data numerik murni tanpa ada katagorikal yang dimana 12 diantaranya adalah int64 dan 3 sisanya adalah float64. 
 
 - Dataset bersifat bersih (cleaned) dan siap digunakan untuk proses modeling tanpa perlu preprocessing lanjutan.
 

@@ -709,7 +709,7 @@ Untuk memperkuat interpretasi dari metrik evaluasi nilai True Positive (TP), Fal
 
 **Problem 1: Identifikasi siswa berisiko rendah performa sejak dini**
 
-- ✅ Terjawab — Model XGBoost dan Random Forest menunjukkan akurasi tinggi dan recall kuat. Artinya, siswa dengan risiko rendah atau tinggi dapat diidentifikasi sejak awal secara kuantitatif dan objektif.
+- ✅ Terjawab — Model XGBoos tmenunjukkan akurasi tinggi dan recall kuat. Artinya, siswa dengan risiko rendah atau tinggi dapat diidentifikasi sejak awal secara kuantitatif dan objektif. sementara itu Random Forest meskipun sedikit dibawah XGBoost tetap menjadi algoritma yang kuat dan stabil untuk identifikasi perfoma akademik siswa yang menjadikannya algoritma alternatif yang sangat baik untuk klasifikasi.
 
 **Problem 2: Tidak adanya sistem prediktif berbasis data untuk GradeClass**
 
